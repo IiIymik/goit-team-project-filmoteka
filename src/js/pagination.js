@@ -15,8 +15,7 @@ const options = {
   lastItemClassName: 'tui-last-child',
 };
 
-const smoothScrool = () =>  { window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+const smoothScrool = () =>  { window.scrollTo({ top: 0, behavior: 'smooth' })};
 
 const pagination = new Pagination('pagination', options);
 
@@ -39,11 +38,8 @@ pagination.on('afterMove', function (evt) {
 });
 
 function creatDivEl(selector, divSelector){
-  const elWhere = `.${selector}`;
-  const elWhich = `.${divSelector}`;
-  const findElWhere = document.querySelector(elWhere);
-
-  const createEL = `<div id="pagination" class="${elWhich}"></div>`
+  const findElWhere = document.querySelector(`.${selector}`);
+  const createEL = `<div id="pagination" class="${divSelector}"></div>`
   findElWhere.insertAdjacentHTML('afterend', createEL);
 };
 
